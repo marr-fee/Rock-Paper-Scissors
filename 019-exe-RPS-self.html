@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors game</title>
+    <link rel="stylesheet" href="019-exe-RPS-self.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <h1>ROCK PAPER SCISSORS!</h1>
+
+      <details id="details">
+        <summary>
+          These are the rules of the game.
+          <!-- <span id="summary-toggle">Show more..</span> -->
+        </summary>
+        <p>
+          You and your opponent are to chose between <strong>Rock</strong>,
+          <strong>Paper</strong>, or <strong>Scissors</strong>.
+        </p>
+        <p><strong>Rock</strong> beats <strong>Scissors</strong></p>
+        <p><strong>Paper</strong> beats <strong>Rock</strong></p>
+        <p><strong>Scissors</strong> beats <strong>Paper</strong></p>
+        <p>Whoever wins a round gets <strong>1 point</strong>.</p>
+        <p>First to <strong>10 points</strong> wins the game</p>
+        <p class="good-luck">Good luck!</p>
+      </details>
+      <div class="game-play-main-container" id="game-play-main-div">
+        <h3>Make your move</h3>
+        <div class="game-play-sub-container" id="game-play-btn-container">
+          <div class="rock-btn-container">
+            <h2>Rock</h2>
+            <button
+              id="rock-btn"
+              class="btn"
+              onclick="
+            playGame('rock');
+            "
+            >
+              <img src="emojis\fist-emoji.svg" class="emoji" />
+            </button>
+          </div>
+          <div class="paper-btn-container">
+            <h2>Paper</h2>
+            <button
+              id="paper-btn"
+              class="btn"
+              onclick="
+            playGame('paper');
+            "
+            >
+              <img src="emojis\raise-hand-emoji.svg" class="emoji" />
+            </button>
+          </div>
+          <div class="scissors-btn-container">
+            <h2>Scissors</h2>
+            <button
+              id="scissors-btn"
+              class="btn"
+              onclick="
+            playGame('scissors');
+            "
+            >
+              <img src="emojis\peace-fingers.svg" class="emoji" />
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="game-update-message-container"
+          id="game-update-msg-container"
+        >
+          <p id="game-update-msg"></p>
+          <button
+            class="play-again-btn"
+            id="continue-btn"
+            onclick="
+          continueGameBtn();
+          "
+          >
+            Make next move
+          </button>
+        </div>
+
+        <div
+          class="game-update-score-container"
+          id="game-update-score-container"
+        >
+          <div class="game-score-update-message">
+            <p>Your Score: <span id="player-score">0</span></p>
+            <p>Computer Score: <span id="computer-score">0</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="game-reset-container" id="game-reset-div">
+        <p class="game-over">Game Over!</p>
+        <p>Final Score</p>
+        <div class="final-score-msg" id="final-score-mesg">
+          <p>Your score: <span id="final-player-score"></span></p>
+          <p>Computer score: <span id="final-computer-score"></span></p>
+        </div>
+        <p class="win-or-lose-message" id="final-win-or-lose-msg"></p>
+        <p id="congrats-betterluck-msg"></p>
+        <button
+          id="reset-game"
+          class="play-again-btn"
+          onclick="
+        resetGame();
+        "
+        >
+          Play again
+        </button>
+      </div>
+      <div class="start-again-btn-container" id="start-again-container">
+        <button
+          id="start-again"
+          class="play-again-btn"
+          onclick="
+        reStartGameAgain();
+        "
+        >
+          Start Game Again
+        </button>
+      </div>
+    </main>
+
+    <script src="019-exe-RPS-self.js"></script>
+  </body>
+</html>
