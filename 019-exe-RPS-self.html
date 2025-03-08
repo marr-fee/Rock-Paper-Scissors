@@ -13,9 +13,12 @@
     />
   </head>
   <body>
+    <!-- Whole game page starts here-->
     <main>
+      <!-- Game title heading -->
       <h1>ROCK PAPER SCISSORS!</h1>
 
+      <!-- Game rules holder starts here -->
       <details id="details">
         <summary>
           These are the rules of the game.
@@ -32,8 +35,14 @@
         <p>First to <strong>10 points</strong> wins the game</p>
         <p class="good-luck">Good luck!</p>
       </details>
+      <!-- Game rules holder ends here -->
+
+      <!-- Main Game play container starts here -->
       <div class="game-play-main-container" id="game-play-main-div">
+        <!-- make your move heading -->
         <h3>Make your move</h3>
+
+        <!-- Game play buttons starts here -->
         <div class="game-play-sub-container" id="game-play-btn-container">
           <div class="rock-btn-container">
             <h2>Rock</h2>
@@ -88,19 +97,46 @@
             Make next move
           </button>
         </div>
+        <!-- Game play buttons ends here -->
 
+        <!-- Game play scores container starts here -->
         <div
           class="game-update-score-container"
           id="game-update-score-container"
         >
+          <p class="Round-p">
+            <strong>Round <span class="round-count">1</span></strong>
+          </p>
+          <!-- Score update container starts here -->
           <div class="game-score-update-message">
             <p>Your Score: <span id="player-score">0</span></p>
             <p>Computer Score: <span id="computer-score">0</span></p>
           </div>
+          <!-- Score update container ends here -->
+
+          <div class="divider"></div>
+
+          <!-- Round score update container starts here -->
+          <div class="round-score-update-message">
+            <p>
+              <strong>Game Score</strong>
+            </p>
+            <div class="round-score-update">
+              <span class="player-round-score">0</span>
+              <span>:</span>
+              <span class="computer-round-score">0</span>
+            </div>
+          </div>
+          <!-- Round score update container ends here -->
         </div>
+        <!-- Game play scores container ends here -->
       </div>
+      <!-- Main Game play container ends here -->
+
+      <!-- Game reset container starts here -->
       <div class="game-reset-container" id="game-reset-div">
-        <p class="game-over">Game Over!</p>
+        <!-- Game over outcome display container starts here -->
+        <p class="round-over"></p>
         <p>Final Score</p>
         <div class="final-score-msg" id="final-score-mesg">
           <p>Your score: <span id="final-player-score"></span></p>
@@ -108,6 +144,9 @@
         </div>
         <p class="win-or-lose-message" id="final-win-or-lose-msg"></p>
         <p id="congrats-betterluck-msg"></p>
+        <!-- Game over outcome display container ends here -->
+
+        <!-- Reset play again button starts here -->
         <button
           id="reset-game"
           class="play-again-btn"
@@ -115,10 +154,19 @@
         resetGame();
         "
         >
-          Play again
+          Continue
         </button>
+        <!-- Reset play again button ends here -->
       </div>
+      <!-- Game reset container ends here -->
+
+      <!-- Round update container starts here-->
+      <div class="new-round-update-div"></div>
+      <!-- Round update container ends here-->
+
+      <!-- Game start over container starts here -->
       <div class="start-again-btn-container" id="start-again-container">
+        <!-- Game start over button starts here -->
         <button
           id="start-again"
           class="play-again-btn"
@@ -126,10 +174,13 @@
         reStartGameAgain();
         "
         >
-          Start Game Again
+          Reset Game
         </button>
+        <!-- Game start over button ends here -->
       </div>
+      <!-- Game start over container ends here -->
     </main>
+    <!-- Whole game page ends here-->
 
     <script src="019-exe-RPS-self.js"></script>
   </body>

@@ -27,10 +27,10 @@ main{
   width: 100%;
 }
 main > h1{
- font-size: 45px;
+ font-size: 35px;
 }
 details{
-  margin: 25px 50px;
+  margin: 10px 50px;
   border: 5px solid orange;
   border-radius: 20px;
   padding: 5px;
@@ -63,7 +63,7 @@ details p > strong{
 }
 .game-play-main-container h3{
   margin-bottom: 25px;
-  font-size: 25px;
+  font-size: 20px;
   text-decoration: underline;
   color: orange;
 }
@@ -120,6 +120,31 @@ details p > strong{
  padding: 25px;
 }
 
+.divider{
+  border-bottom: 1px solid black;
+  width: 90%;
+  margin: 10px auto;
+}
+
+.round-score-update{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.Round-p{
+  font-size: 30px;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+.round-score-update span{
+  font-weight: bold;
+  font-size: 30px;
+  margin: 15px 10px 0 10px;
+}
+
 @keyframes zoomIn {
   from {
     transform: scale(0);
@@ -151,7 +176,7 @@ details p > strong{
   justify-content: space-around;
   margin: 0;
 }
-.game-over{
+.round-over{
   font-size: 28px;
   font-weight: bold;
 }
@@ -172,7 +197,7 @@ details p > strong{
   border-radius: 25px;
   color: rgb(53, 48, 48);
   transition: background-color 0.3s ease;
-  margin-top: 20px;
+  margin-top: 10px;
   cursor: pointer;
 }
 

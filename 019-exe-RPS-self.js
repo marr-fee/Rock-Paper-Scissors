@@ -1,5 +1,13 @@
 let playerScore = 0;
 let computerScore = 0;
+let roundCount = 1;
+let playerRoundScore = 0;
+let computerRoundScore = 0;
+
+let updateRoundCount = document.querySelector('.round-count');
+let roundOverDisplay = document.querySelector('.round-over');
+let updatePlayerRoundScore = document.querySelector('.player-round-score');
+let updateComputerRoundScore = document.querySelector('.computer-round-score');
 let updatePlayerScore = document.getElementById("player-score");
 let updateComputerScore = document.getElementById("computer-score");
 let updateMessage = document.getElementById("game-update-msg");
@@ -45,16 +53,23 @@ function playGame(playerMove) {
   let result = updateResults(playerMove, computerMove);
 
   if (playerScore === 10 && computerScore < 10){
+    roundOverDisplay.innerHTML = `<strong>Round ${roundCount} Over!</strong>`;
+    playerRoundScore++;
+    updatePlayerRoundScore.innerText = playerRoundScore;
     gameFinalOutcome.innerText = `You Won!`;
     gameFinalOutcome.style.color = "green";
     congratulationMsg.innerText = `Congratulations!`;
     updateFinalPlayerScore.innerText = playerScore;
     updateFinalComputerScore.innerText = computerScore;
     document.getElementById("game-reset-div").style.display = "block";
+    
     document.getElementById("game-play-main-div").style.display = "none";
     startGameAgain.style.display = "none";
 
   } else if (playerScore < 10 && computerScore === 10) {
+    roundOverDisplay.innerHTML = `<strong>Round ${roundCount} Over!</strong>`;
+    computerRoundScore++;
+    updateComputerRoundScore.innerText = computerRoundScore;
     gameFinalOutcome.innerText = `You Lose!`;
     gameFinalOutcome.style.color = "red";
     congratulationMsg.innerText = `Better luck next time.`;
@@ -69,9 +84,12 @@ function playGame(playerMove) {
 function resetGame(){
   playerScore = 0;
   computerScore = 0;
+  roundCount++;
+
   updateMessage.innerText = "";
   document.getElementById("game-reset-div").style.display = "none";
   document.getElementById("game-play-main-div").style.display = "block";
+  updateRoundCount.innerText = roundCount;
   updateFinalPlayerScore.innerText = "0";
   updateFinalComputerScore.innerText = "0";
   updatePlayerScore.innerText = "0";
@@ -79,6 +97,7 @@ function resetGame(){
   continueGame.style.display = "none";
   gamePlayButton.style.visibility ="visible";
   startGameAgain.style.display = "block";
+
 }
 
 function continueGameBtn(){
@@ -89,6 +108,10 @@ function continueGameBtn(){
 }
 
  function reStartGameAgain(){
+  roundCount = 1;
+  updateRoundCount.innerText = roundCount;
+  updateComputerRoundScore.innerText = "0";
+  updatePlayerRoundScore.innerText = "0";
   playerScore = 0;
   computerScore = 0;
   updateMessage.innerText = "";
