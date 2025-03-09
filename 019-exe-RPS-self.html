@@ -46,37 +46,19 @@
         <div class="game-play-sub-container" id="game-play-btn-container">
           <div class="rock-btn-container">
             <h2>Rock</h2>
-            <button
-              id="rock-btn"
-              class="btn"
-              onclick="
-            playGame('rock');
-            "
-            >
+            <button id="rock" class="btn">
               <img src="emojis\fist-emoji.svg" class="emoji" />
             </button>
           </div>
           <div class="paper-btn-container">
             <h2>Paper</h2>
-            <button
-              id="paper-btn"
-              class="btn"
-              onclick="
-            playGame('paper');
-            "
-            >
+            <button id="paper" class="btn">
               <img src="emojis\raise-hand-emoji.svg" class="emoji" />
             </button>
           </div>
           <div class="scissors-btn-container">
             <h2>Scissors</h2>
-            <button
-              id="scissors-btn"
-              class="btn"
-              onclick="
-            playGame('scissors');
-            "
-            >
+            <button id="scissors" class="btn">
               <img src="emojis\peace-fingers.svg" class="emoji" />
             </button>
           </div>
@@ -87,13 +69,7 @@
           id="game-update-msg-container"
         >
           <p id="game-update-msg"></p>
-          <button
-            class="play-again-btn"
-            id="continue-btn"
-            onclick="
-          continueGameBtn();
-          "
-          >
+          <button class="play-again-btn" id="continue-btn">
             Make next move
           </button>
         </div>
@@ -147,15 +123,7 @@
         <!-- Game over outcome display container ends here -->
 
         <!-- Reset play again button starts here -->
-        <button
-          id="reset-game"
-          class="play-again-btn"
-          onclick="
-        resetGame();
-        "
-        >
-          Continue
-        </button>
+        <button id="next-round" class="play-again-btn">Next Round</button>
         <!-- Reset play again button ends here -->
       </div>
       <!-- Game reset container ends here -->
@@ -167,15 +135,7 @@
       <!-- Game start over container starts here -->
       <div class="start-again-btn-container" id="start-again-container">
         <!-- Game start over button starts here -->
-        <button
-          id="start-again"
-          class="play-again-btn"
-          onclick="
-        reStartGameAgain();
-        "
-        >
-          Reset Game
-        </button>
+        <button id="reset-game" class="play-again-btn">Reset Game</button>
         <!-- Game start over button ends here -->
       </div>
       <!-- Game start over container ends here -->
@@ -183,5 +143,6 @@
     <!-- Whole game page ends here-->
 
     <script src="019-exe-RPS-self.js"></script>
+    <script></script>
   </body>
 </html>

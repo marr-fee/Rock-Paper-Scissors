@@ -45,7 +45,7 @@ function playGame(playerMove) {
       <b>${playerMove}</b> beats <b>${computerMove}<b><br>
       You won this round!`, continueGame.style.display = "block", gamePlayButton.style.visibility ="hidden") : playerMove === computerMove ? (updateMessage.innerHTML = `Both chose <b>${playerMove}</b>,<br> That's a <b>Tie</b>.`, continueGame.style.display = "block", gamePlayButton.style.visibility ="hidden") : (computerScore++, updateComputerScore.innerText = computerScore, updateMessage.innerHTML = `You picked <b>${playerMove}</b> and Computer picked <b>${computerMove}</b><br>
         <b>${computerMove}</b> beats <b>${playerMove}</b><br>
-        Computer won this round!`, continueGame.style.display = "block", gamePlayButton.style.visibility ="hidden")
+        <b>Computer won this round!</b>`, continueGame.style.display = "block", gamePlayButton.style.visibility ="hidden")
 
         return comparedResult;
   };
@@ -56,7 +56,7 @@ function playGame(playerMove) {
     roundOverDisplay.innerHTML = `<strong>Round ${roundCount} Over!</strong>`;
     playerRoundScore++;
     updatePlayerRoundScore.innerText = playerRoundScore;
-    gameFinalOutcome.innerText = `You Won!`;
+    gameFinalOutcome.innerText = `You Won This Round!`;
     gameFinalOutcome.style.color = "green";
     congratulationMsg.innerText = `Congratulations!`;
     updateFinalPlayerScore.innerText = playerScore;
@@ -70,9 +70,9 @@ function playGame(playerMove) {
     roundOverDisplay.innerHTML = `<strong>Round ${roundCount} Over!</strong>`;
     computerRoundScore++;
     updateComputerRoundScore.innerText = computerRoundScore;
-    gameFinalOutcome.innerText = `You Lose!`;
+    gameFinalOutcome.innerText = `You Lose This Round!`;
     gameFinalOutcome.style.color = "red";
-    congratulationMsg.innerText = `Better luck next time.`;
+    congratulationMsg.innerText = `Better luck next round.`;
     updateFinalPlayerScore.innerText = playerScore;
     updateFinalComputerScore.innerText = computerScore;
     document.getElementById("game-reset-div").style.display = "block";
@@ -81,7 +81,8 @@ function playGame(playerMove) {
   }
 }
 
-function resetGame(){
+
+function startNextRound(){
   playerScore = 0;
   computerScore = 0;
   roundCount++;
@@ -100,6 +101,7 @@ function resetGame(){
 
 }
 
+
 function continueGameBtn(){
   continueGame.style.display = "none";
   gamePlayButton.style.visibility ="visible";
@@ -107,7 +109,8 @@ function continueGameBtn(){
   
 }
 
- function reStartGameAgain(){
+
+ function resetGame(){
   roundCount = 1;
   updateRoundCount.innerText = roundCount;
   updateComputerRoundScore.innerText = "0";
@@ -125,3 +128,27 @@ function continueGameBtn(){
 } 
 
 
+const choices = ["rock", "paper", "scissors"];
+const nextMoveButton = document.getElementById('continue-btn');
+const nextRoundButton = document.getElementById('next-round');
+const restartGame = document.getElementById('reset-game');
+
+choices.forEach((playerMove) => {
+  document
+    .getElementById(playerMove)
+    .addEventListener("click", (event) => {
+      playGame(playerMove);
+    });
+});
+
+nextMoveButton.addEventListener('click', () => {
+  continueGameBtn();
+});
+
+nextRoundButton.addEventListener('click', () => {
+  startNextRound();
+});
+
+restartGame.addEventListener('click', () => {
+  resetGame();
+});
